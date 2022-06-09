@@ -1,6 +1,6 @@
 #!/bin/bash
-VPN_server_info()								# Recupère les information pour l'affichage LCD
-{
+VPN_server_info()
+{sudo chmod +rwx 
 rm -f VPN_server_info.py
 ssh_info=$(service ssh status | grep Active)
 ssh_info=${ssh_info:12:7}
