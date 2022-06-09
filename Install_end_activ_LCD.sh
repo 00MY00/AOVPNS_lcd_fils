@@ -37,64 +37,18 @@ done
 sudo apt install python3-dev python3-rpi.gpio
 sudo git clone https://github.com/the-raspberry-pi-guy/lcd.git
 cd ./lcd/
-rm -f demo_*.py
+sudo rm -f demo_*.py
 
 #---------------------
-# Affichage du LCD
-echo -e "#! /usr/bin/env python" >> AOVPNS_lcd.py
-
-echo -e "# Simple string program. Writes and updates strings." >> AOVPNS_lcd.py
-echo -e "# Demo program for the I2C 16x2 Display from Ryanteck.uk" >> AOVPNS_lcd.py
-echo -e "# Created by Matthew Timmons-Brown for The Raspberry Pi Guy YouTube channel" >> AOVPNS_lcd.py
-
-echo -e "# Import necessary libraries for communication and display use" >> AOVPNS_lcd.py
-echo -e "import drivers" >> AOVPNS_lcd.py
-echo -e "import VPN_server_info" >> AOVPNS_lcd.py
-echo -e "import subprocess" >> AOVPNS_lcd.py
-echo -e "from time import sleep" >> AOVPNS_lcd.py
-
-echo -e "# Load the driver and set it to \"display\"" >> AOVPNS_lcd.py
-echo -e "# If you use something from the driver library use the \"display.\" prefix first" >> AOVPNS_lcd.py
-echo -e "display = drivers.Lcd()" >> AOVPNS_lcd.py
-
-echo -e "cut=len(VPN_server_info.date)" >> AOVPNS_lcd.py
-echo -e "cut=int(cut) // 2" >> AOVPNS_lcd.py
-echo -e "date1=VPN_server_info.date[0:cut]" >> AOVPNS_lcd.py
-echo -e "date2=VPN_server_info.date[cut:]" >> AOVPNS_lcd.py
-
-echo -e "# Main body of code" >> AOVPNS_lcd.py
-echo -e "try:" >> AOVPNS_lcd.py
-echo -e "    while True:" >> AOVPNS_lcd.py
-echo -e "        # Max 16 caractèr" >> AOVPNS_lcd.py
-echo -e "        print(\"Affichage sur LCD\")" >> AOVPNS_lcd.py
-echo -e "        display.lcd_display_string(\"le ssh est\", 1)" >> AOVPNS_lcd.py
-echo -e "        display.lcd_display_string(f\"{VPN_server_info.SSH}\", 2)" >> AOVPNS_lcd.py
-echo -e "        sleep(2)" >> AOVPNS_lcd.py
-echo -e "        display.lcd_clear()" >> AOVPNS_lcd.py                                
-echo -e "        display.lcd_display_string(\"OpenVPN est\", 1)" >> AOVPNS_lcd.py  
-echo -e "        display.lcd_display_string(f\"{VPN_server_info.VPN}\", 2)" >> AOVPNS_lcd.py  
-echo -e "        sleep(2)" >> AOVPNS_lcd.py
-echo -e "        display.lcd_clear()" >> AOVPNS_lcd.py  
-echo -e "        display.lcd_display_string(\"La date est\", 1)" >> AOVPNS_lcd.py  
-echo -e "        display.lcd_display_string(f\"{date1}\", 2)" >> AOVPNS_lcd.py  
-echo -e "        sleep(2)" >> AOVPNS_lcd.py                                           
-echo -e "        display.lcd_clear()" >> AOVPNS_lcd.py 
-echo -e "        display.lcd_display_string(\"La date est\", 1)" >> AOVPNS_lcd.py  
-echo -e "        display.lcd_display_string(f\"{date2}\", 2)" >> AOVPNS_lcd.py  
-echo -e "        sleep(3)" >> AOVPNS_lcd.py 
-echo -e "        display.lcd_clear()" >> AOVPNS_lcd.py                                
-echo -e "        subprocess.call([\"sh\",\"info.sh\"])" >> AOVPNS_lcd.py
-echo -e "except KeyboardInterrupt:" >> AOVPNS_lcd.py
-echo -e "    print(\"Cleaning up!\")" >> AOVPNS_lcd.py
-echo -e "    display.lcd_clear()" >> AOVPNS_lcd.py
+sudo wget https://raw.githubusercontent.com/00MY00/AOVPNS_lcd_fils/main/AOVPNS_lcd.py
+sudo wget https://raw.githubusercontent.com/00MY00/AOVPNS_lcd_fils/main/info.sh
 #---------------------
-
 
 #---------------------
 sudo chmod +rwx *.*
 #---------------------
 
-rm -f install.sh
+sudo rm -f install.sh
 sudo chmod +rwx setup.sh
 sudo ./setup.sh
 

@@ -31,11 +31,9 @@ user_info=$(users)
 y=$(echo "$user_info" | tr " " "\n")
 for user_find in $y; 
 do 
-
-sudo echo -e "user$i=\"$user_find\"" >> VPN_server_info.py
-
 i=$(( $i + 1 ))
 done
+sudo echo -e "user=\"$user_info\"" >> VPN_server_info.py
 sudo echo -e "nb_user=\"$i\"" >> VPN_server_info.py
 
 

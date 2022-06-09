@@ -19,8 +19,8 @@ cut=len(VPN_server_info.date)
 cut=int(cut) // 2
 date1=VPN_server_info.date[0:cut]
 date2=VPN_server_info.date[cut:]
-
-
+users=VPN_server_info.user.split(" ")
+max_user=len(users)
 
 # Main body of code
 try:
@@ -42,9 +42,9 @@ try:
         display.lcd_display_string("La date est", 1)  
         display.lcd_display_string(f"{date2}", 2)  
         sleep(3) 
-        for i in range(1, VPN_server_info.nb_user):
+        for i in range(0, max_user):
             display.lcd_display_string("Users conectée", 1)
-            display.lcd_display_string(f"{VPN_server_info.user[i]}", 2)
+            display.lcd_display_string(f"{users[i]}", 2)
             sleep(2)
             display.lcd_clear()    
           
