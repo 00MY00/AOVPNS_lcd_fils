@@ -34,9 +34,14 @@ sudo echo -e "user$i=\"$user_find\"" >> VPN_server_info.py
 i=$(( $i + 1 ))
 done
 
+sudo echo -e "ContUser=\"$i\""
+
 date=$(date)
 sudo echo -e "date=\"$date\"" >> VPN_server_info.py
 
 }
+while ((i<0));
+do
 VPN_server_info
 python3 AOVPNS_lcd.py
+done
