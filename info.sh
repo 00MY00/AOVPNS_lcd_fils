@@ -1,6 +1,7 @@
 #!/bin/bash
 VPN_server_info()
 {
+
 sudo chmod +rwx *
 rm -f VPN_server_info.py
 ssh_info=$(service ssh status | grep Active)
@@ -35,7 +36,7 @@ sudo echo -e "user$i=\"$user_find\"" >> VPN_server_info.py
 i=$(( $i + 1 ))
 done
 
-sudo echo -e "ContUser=\"$i\""
+sudo echo -e "ContUser=\"$i\"" >> VPN_server_info.py
 
 date=$(date)
 sudo echo -e "date=\"$date\"" >> VPN_server_info.py
