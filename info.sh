@@ -45,4 +45,5 @@ sudo echo -e "date=\"$date\"" >> VPN_server_info.py
 }
 
 VPN_server_info
+sleep 1
 python3 AOVPNS_lcd.py
