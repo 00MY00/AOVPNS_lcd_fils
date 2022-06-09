@@ -33,10 +33,15 @@ for user_find in $y;
 do 
 
 sudo echo -e "user$i=\"$user_find\"" >> VPN_server_info.py
+if [ "$i" -eq "$y" ];
+then
+	sudo echo -e "nb_user=\"$i\"" >> VPN_server_info.py
+fi
+
 i=$(( $i + 1 ))
 done
 
-sudo echo -e "ContUser=\"$i\"" >> VPN_server_info.py
+
 
 date=$(date)
 sudo echo -e "date=\"$date\"" >> VPN_server_info.py
