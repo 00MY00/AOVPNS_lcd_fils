@@ -20,6 +20,8 @@ cut=int(cut) // 2
 date1=VPN_server_info.date[0:cut]
 date2=VPN_server_info.date[cut:]
 
+
+
 # Main body of code
 try:
     while True:
@@ -40,7 +42,12 @@ try:
         display.lcd_display_string("La date est", 1)  
         display.lcd_display_string(f"{date2}", 2)  
         sleep(3) 
-        display.lcd_clear()                                
+        for i in range(1, VPN_server_info.nb_user)
+            display.lcd_display_string("Users conectée", 1)
+            display.lcd_display_string(f"{VPN_server_info.user[i]}", 2)
+            sleep(2)
+            display.lcd_clear()    
+          
         subprocess.call(["sh","info.sh"])
 except KeyboardInterrupt:
     # If there is a KeyboardInterrupt (when you press ctrl+c), exit the program and cleanup

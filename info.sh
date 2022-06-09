@@ -3,7 +3,7 @@ VPN_server_info()
 {
 
 sudo chmod +rwx *
-rm -f VPN_server_info.py
+sudo rm -f VPN_server_info.py
 ssh_info=$(service ssh status | grep Active)
 ssh_info=${ssh_info:12:7}
 ssh_info=$(echo "$ssh_info" | tr " " "-")
@@ -33,22 +33,18 @@ for user_find in $y;
 do 
 
 sudo echo -e "user$i=\"$user_find\"" >> VPN_server_info.py
-if [ "$i" -eq "$user_find" ];
-then
-	sudo echo -e "nb_user=\"$i\"" >> VPN_server_info.py
-fi
 
 i=$(( $i + 1 ))
 done
-
+sudo echo -e "nb_user=\"$i\"" >> VPN_server_info.py
 
 
 date=$(date)
 sudo echo -e "date=\"$date\"" >> VPN_server_info.py
 
+
+
 }
-while ((i<0));
-do
+
 VPN_server_info
 python3 AOVPNS_lcd.py
-done
