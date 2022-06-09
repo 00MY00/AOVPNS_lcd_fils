@@ -33,7 +33,7 @@ for user_find in $y;
 do 
 
 sudo echo -e "user$i=\"$user_find\"" >> VPN_server_info.py
-if [ "$i" -eq "$y" ];
+if [ "$i" -eq "$user_find" ];
 then
 	sudo echo -e "nb_user=\"$i\"" >> VPN_server_info.py
 fi
