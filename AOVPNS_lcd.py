@@ -42,7 +42,7 @@ try:
         display.lcd_display_string("La date est", 1)  
         display.lcd_display_string(f"{date2}", 2)  
         sleep(3) 
-        for i in range(1, VPN_server_info.nb_user);
+        for i in range(1, VPN_server_info.nb_user):
             display.lcd_display_string("Users conectée", 1)
             display.lcd_display_string(f"{VPN_server_info.user[i]}", 2)
             sleep(2)
