@@ -46,7 +46,7 @@ try:
         sleep(3) 
         for i in range(0, max_user):
             display.lcd_clear() 
-            display.lcd_display_string(f"Users {i} conectée", 1)
+            display.lcd_display_string(f"Users {i} conecter", 1)
             display.lcd_display_string(f"{users[i]}", 2)
             sleep(2)
             display.lcd_clear()    
