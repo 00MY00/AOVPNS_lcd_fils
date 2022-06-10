@@ -8,6 +8,8 @@
 import drivers
 import VPN_server_info
 import subprocess
+
+
 from time import sleep
 
 
@@ -49,7 +51,8 @@ try:
             sleep(2)
             display.lcd_clear()    
           
-        subprocess.call(["sh","info.sh"])
+        import subprocess
+        subprocess.call(["./info.sh"])
 except KeyboardInterrupt:
     # If there is a KeyboardInterrupt (when you press ctrl+c), exit the program and cleanup
     print("Cleaning up!")
