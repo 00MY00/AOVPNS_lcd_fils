@@ -36,6 +36,8 @@ done
 sudo echo -e "user=\"$user_info\"" >> VPN_server_info.py
 sudo echo -e "nb_user=\"$i\"" >> VPN_server_info.py
 
+sudo sed -i "s/root//" "VPN_server_info.py"
+
 
 date=$(date)
 sudo echo -e "date=\"$date\"" >> VPN_server_info.py
