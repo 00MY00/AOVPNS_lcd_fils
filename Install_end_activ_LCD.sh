@@ -2,6 +2,7 @@
 
 lcd()
 {
+back=$(pwd)
 while ((i<1));									# Conection des pins
 do
 	clear
@@ -32,6 +33,13 @@ fi
 
 done
 
+# HEur est date
+
+# timedatectl list-timezones
+
+# sudo timedatectl set-timezone Europe/Paris
+
+
 # Installation resource
 
 sudo apt install python3-dev python3-rpi.gpio
@@ -40,12 +48,20 @@ cd ./lcd/
 sudo rm -f demo_*.py
 
 #---------------------
+# affichage sur LCD
 sudo wget https://raw.githubusercontent.com/00MY00/AOVPNS_lcd_fils/main/AOVPNS_lcd.py
+# recherche donner pour l'affichage
 sudo wget https://raw.githubusercontent.com/00MY00/AOVPNS_lcd_fils/main/info.sh
+# pour la tache planifier
+sudo wget https://raw.githubusercontent.com/00MY00/AOVPNS_lcd_fils/main/LCD_tach.service
 #---------------------
 
 #---------------------
 sudo chmod +rwx *.*
+#---------------------
+sudo mv LCD_tach.service /etc/systemd/system/			# déplace dans le bon répertoire
+sudo chmod +rwx /etc/systemd/system/LCD_tach.service	# donne les drois
+sudo systemctl enable  LCD_tach.service					# acctive la tache
 #---------------------
 
 sudo rm -f install.sh
