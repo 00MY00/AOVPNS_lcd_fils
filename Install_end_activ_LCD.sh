@@ -36,10 +36,13 @@ done
 while ((i<1));
 do
 	clear 
-	echo -e "Entrée votre Nom de la Time Zone"
+	echo -e "#########################################"
+	echo -e "\n"
+	echo -e "Entrée le nom de la Time Zone"
 	echo -e "entrez ? pour les afficher tous"
 	echo -e "Racourcie"
 	echo -e "[ ch ] pour Zurich [ fr ] pour Paris"
+	echo -e "#########################################"
 	echo -e "\n\n"
 	
 	read -p ": " NomdelaTimeZone
