@@ -1,0 +1,10 @@
+sles151:/etc/systemd/system/
+[Unit]
+Description=Démarage du LCD au démarage de l'appareil 
+
+[Service]
+Type=simple
+ExecStart=/home/$USER/lcd/info.sh
+
+[Install]
+WantedBy=multi-user.target
