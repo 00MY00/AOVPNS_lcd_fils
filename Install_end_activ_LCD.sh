@@ -33,6 +33,64 @@ fi
 
 done
 
+while ((i<1));
+do
+	clear 
+	echo -e "Entrée votre Nom de la Time Zone"
+	echo -e "entrez ? pour les afficher tous"
+	echo -e "Racourcie"
+	echo -e "[ ch ] pour Zurich [ fr ] pour Paris"
+	echo -e "\n\n"
+	
+	read -p ": " NomdelaTimeZone
+	
+	if [ "$NomdelaTimeZone" = "?" ];
+	then
+		echo -e "Entrer [ q ] pour fermer"
+		timedatectl list-timezones
+	
+	elif [ "$NomdelaTimeZone" = "ch" ];
+	then
+		NomdelaTimeZone=Europe/Zurich
+		sudo timedatectl set-timezone $NomdelaTimeZone
+		if [ "$?" -eq "0" ]
+		then
+			echo -e "[OK] terminer"
+			sleep 2
+			break
+		else
+			echo -e "ERREUR !"
+			sleep 2
+		fi
+
+	elif [ "$NomdelaTimeZone" = "fr" ];
+	then
+		NomdelaTimeZone=Europe/Paris
+		sudo timedatectl set-timezone $NomdelaTimeZone
+		if [ "$?" -eq "0" ]
+		then
+			echo -e "[OK] terminer"
+			sleep 2
+			break
+		else
+			echo -e "ERREUR !"
+			sleep 2
+		fi
+
+	else
+		sudo timedatectl set-timezone $NomdelaTimeZone
+		if [ "$?" -eq "0" ]
+		then
+			echo -e "[OK] terminer"
+			sleep 2
+			break
+		else
+			echo -e "ERREUR !"
+			sleep 2
+		fi
+	fi
+done
+
 # HEur est date
 
 # timedatectl list-timezones
