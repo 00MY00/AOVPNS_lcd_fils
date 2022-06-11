@@ -1,7 +1,7 @@
 #!/bin/bash
 VPN_server_info()
 {
-cd (home/Chang_my/lcd
+cd /home/Chang_my/lcd
 sudo chmod +rwx *
 sudo rm -f VPN_server_info.py
 ssh_info=$(service ssh status | grep Active)
