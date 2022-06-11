@@ -4,7 +4,7 @@ Description=Démarage du LCD au démarage de l'appareil
 
 [Service]
 Type=simple
-ExecStart=/home/$USER/lcd/info.sh
+ExecStart=/home/USER/lcd/info.sh
 
 [Install]
 WantedBy=multi-user.target
