@@ -59,6 +59,7 @@ sudo wget https://raw.githubusercontent.com/00MY00/AOVPNS_lcd_fils/main/LCD_tach
 #---------------------
 sudo chmod +rwx *.*
 #---------------------
+sudo sed -i "s/USER/$USER/" "LCD_tach.service"
 sudo mv LCD_tach.service /etc/systemd/system/			# déplace dans le bon répertoire
 sudo chmod +rwx /etc/systemd/system/LCD_tach.service	# donne les drois
 sudo systemctl enable  LCD_tach.service					# acctive la tache
