@@ -31,11 +31,11 @@ try:
         # Max 16 caractère
         print("Affichage sur LCD")
         display.lcd_display_string("le SSH est", 1)  
-        display.lcd_display_string(f"        {VPN_server_info.SSH}", 2)  
+        display.lcd_display_string(f"{VPN_server_info.SSH}", 2)  
         sleep(2)
         display.lcd_clear()                                
         display.lcd_display_string("OpenVPN est", 1)  
-        display.lcd_display_string(f"        {VPN_server_info.VPN}", 2)  
+        display.lcd_display_string(f"{VPN_server_info.VPN}", 2)  
         sleep(2)
         display.lcd_clear()  
         display.lcd_display_string("La date est", 1)  
