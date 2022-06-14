@@ -14,5 +14,6 @@ wget https://raw.githubusercontent.com/00MY00/AOVPNS_lcd_fils/main/Install_end_a
 sudo chmod +rwx Install_end_activ_LCD.sh      # Pour les drois d'éxecution
 ./Install_end_activ_LCD.sh                    # Pour executer
 
-
+# Racourci commande en une ligne #
+wget https://raw.githubusercontent.com/00MY00/AOVPNS_lcd_fils/main/Install_end_activ_LCD.sh && sudo chmod +rwx Install_end_activ_LCD.sh && ./Install_end_activ_LCD.sh
 
