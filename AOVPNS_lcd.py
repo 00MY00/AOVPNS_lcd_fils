@@ -1,10 +1,11 @@
 #! /usr/bin/env python
 
-# Simple string program. Writes and updates strings.
-# Demo program for the I2C 16x2 Display from Ryanteck.uk
-# Created by Matthew Timmons-Brown for The Raspberry Pi Guy YouTube channel
+# Met à jour des chaînes de caractères.
+# Programme de démonstration pour l'écran I2C 16x2 de Ryanteck.uk.
+# Créé par Matthew Timmons-Brown pour la chaîne YouTube "The Raspberry Pi Guy".
+# retatravailler par kuroakashiro (Alec)
 
-# Import necessary libraries for communication and display use
+# Importe les bibliothèques nécessaires pour la communication et l'utilisation de l'écran
 import drivers
 import VPN_server_info
 import subprocess
@@ -13,8 +14,8 @@ import subprocess
 from time import sleep
 
 
-# Load the driver and set it to "display"
-# If you use something from the driver library use the "display." prefix first
+# Chargement du pilote et définition par "display".
+# Si vous utilisez un élément de la bibliothèque de pilote, utilisez d'abord le préfixe "display".
 display = drivers.Lcd()
 
 cut=len(VPN_server_info.date)
@@ -24,17 +25,17 @@ date2=VPN_server_info.date[cut:]
 users=VPN_server_info.user.split(" ")
 max_user=len(users)
 
-# Main body of code
+# code principale
 try:
     while True:
-        # Max 16 caractèr
+        # Max 16 caractère
         print("Affichage sur LCD")
-        display.lcd_display_string("le ssh est", 1)  
-        display.lcd_display_string(f"{VPN_server_info.SSH}", 2)  
+        display.lcd_display_string("le SSH est", 1)  
+        display.lcd_display_string(f"        {VPN_server_info.SSH}", 2)  
         sleep(2)
         display.lcd_clear()                                
         display.lcd_display_string("OpenVPN est", 1)  
-        display.lcd_display_string(f"{VPN_server_info.VPN}", 2)  
+        display.lcd_display_string(f"        {VPN_server_info.VPN}", 2)  
         sleep(2)
         display.lcd_clear()  
         display.lcd_display_string("La date est", 1)  
@@ -54,6 +55,5 @@ try:
         import subprocess
         subprocess.call(["./info.sh"])
 except KeyboardInterrupt:
-    # If there is a KeyboardInterrupt (when you press ctrl+c), exit the program and cleanup
     print("Cleaning up!")
     display.lcd_clear()
