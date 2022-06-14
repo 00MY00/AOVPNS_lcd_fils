@@ -58,7 +58,7 @@ do
 		sudo timedatectl set-timezone $NomdelaTimeZone
 		if [ "$?" -eq "0" ]
 		then
-			echo -e "[OK] terminer"
+			echo -e "\033[32m[OK] terminer\033[00m"
 			sleep 2
 			break
 		else
@@ -72,7 +72,7 @@ do
 		sudo timedatectl set-timezone $NomdelaTimeZone
 		if [ "$?" -eq "0" ]
 		then
-			echo -e "[OK] terminer"
+			echo -e "\033[32m[OK] terminer\033[32m"
 			sleep 2
 			break
 		else
