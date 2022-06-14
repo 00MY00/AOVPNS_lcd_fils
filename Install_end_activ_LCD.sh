@@ -58,11 +58,11 @@ do
 		sudo timedatectl set-timezone $NomdelaTimeZone
 		if [ "$?" -eq "0" ]
 		then
-			echo -e "\033[32m[OK] terminer\033[00m"
+			echo -e "\033[32m[OK]\033[00m terminer"
 			sleep 2
 			break
 		else
-			echo -e "ERREUR !"
+			echo -e "\033[31mERREUR !\033[00m"
 			sleep 2
 		fi
 
@@ -72,11 +72,11 @@ do
 		sudo timedatectl set-timezone $NomdelaTimeZone
 		if [ "$?" -eq "0" ]
 		then
-			echo -e "\033[32m[OK] terminer\033[32m"
+			echo -e "\033[32m[OK]\033[00m terminer"
 			sleep 2
 			break
 		else
-			echo -e "ERREUR !"
+			echo -e "\033[31mERREUR !\033[00m"
 			sleep 2
 		fi
 
@@ -84,11 +84,11 @@ do
 		sudo timedatectl set-timezone $NomdelaTimeZone
 		if [ "$?" -eq "0" ]
 		then
-			echo -e "[OK] terminer"
+			echo -e "\033[32m[OK]\033[00m terminer"
 			sleep 2
 			break
 		else
-			echo -e "ERREUR !"
+			echo -e "\033[31mERREUR !\033[00m"
 			sleep 2
 		fi
 	fi
