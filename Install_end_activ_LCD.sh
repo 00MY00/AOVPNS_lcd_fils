@@ -8,20 +8,20 @@ do
 	clear
 	echo -e "################################################################"
 	echo -e "Conection pour écrant LCD"
-	echo -e "Prérequi:"
+	echo -e "Prérequis:"
 	echo -e "		Joy-it SBC-LCD16x2 Display-Modul 6.6 cm"
 	echo -e "		LCDZ IIC-I2C"
 	echo -e "		Cable Mâle-femmelle X4"
 	echo -e "		Cable Mâle-Mâle	    X4\n"
 	echo -e "	---------------------------------------"
-	echo -e "Les branchement:"
-	echo -e "0)	Brancher le module LCDZ IIC-I2C dans les pine de l'écrant LCD"
+	echo -e "Les branchements:"
+	echo -e "0)	Brancher le module LCDZ IIC-I2C dans les pines de l'écrant LCD"
 	echo -e "1)	pin GND SBC-LCD sur pin GND rasspberry"
 	echo -e "2)	pin VCC SBC-LCD sur pin 5V rasspberry"
 	echo -e "3)	pin SDA SBC-LCD sur pin SDA1 rasspberry"
 	echo -e "4)	pin SCL SBC-LCD sur pin SCL1 rasspberry"
 	echo -e "################################################################"
-	echo -e "\nEntrée [ confirme ] pour confirmer que les branchement son juste\n"
+	echo -e "\nEntrez [ confirme ] pour confirmer que vos branchements son juste\n"
 
 read -p ": " fini_conection
 
@@ -38,9 +38,9 @@ do
 	clear 
 	echo -e "#########################################"
 	echo -e "\n"
-	echo -e "Entrée le nom de la Time Zone"
-	echo -e "entrez ? pour les afficher tous"
-	echo -e "Racourcie"
+	echo -e "Entrez le nom de la Time Zone"
+	echo -e "Entrez ? pour les afficher tous"
+	echo -e "Raccourcis"
 	echo -e "[ ch ] pour Zurich [ fr ] pour Paris"
 	echo -e "#########################################"
 	echo -e "\n\n"
@@ -49,7 +49,7 @@ do
 	
 	if [ "$NomdelaTimeZone" = "?" ];
 	then
-		echo -e "Entrer [ q ] pour fermer"
+		echo -e "Entrez [ q ] pour fermer"
 		timedatectl list-timezones
 	
 	elif [ "$NomdelaTimeZone" = "ch" ];
