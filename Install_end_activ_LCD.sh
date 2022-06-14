@@ -103,7 +103,7 @@ done
 
 # Installation resource
 
-sudo apt install python3-dev python3-rpi.gpio
+sudo apt install python3-dev python3-rpi.gpio -y
 sudo git clone https://github.com/the-raspberry-pi-guy/lcd.git
 cd ./lcd/
 sudo rm -f demo_*.py
