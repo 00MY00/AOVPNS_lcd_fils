@@ -44,7 +44,7 @@ try:
         display.lcd_clear() 
         display.lcd_display_string("La date est", 1)  
         display.lcd_display_string(f"{date2}", 2)  
-        sleep(3) 
+        sleep(2) 
         for i in range(0, max_user):
             display.lcd_clear() 
             display.lcd_display_string(f"Users {i} conecter", 1)
