@@ -104,6 +104,13 @@ done
 # Installation resource
 
 sudo apt install python3-dev python3-rpi.gpio -y
+if [ "$?" -eq "130" ];				# Corection ci erreur double procesuse 
+then
+	x=$(ps aux | grep -i dpkg)
+	y=' ' read -ra z <<< "$x"
+	service=$(echo ${z[1]})
+	sudo kill $service
+fi
 sudo git clone https://github.com/the-raspberry-pi-guy/lcd.git
 cd ./lcd/
 sudo rm -f demo_*.py
@@ -136,4 +143,4 @@ sudo ./setup.sh
 
 }
 
-lcd
+lcd 					# Appel de la fonction LCD
