@@ -15,7 +15,7 @@ else
 fi
 
 vpn_info=$(service ssh status | grep Active)
-vpn_info=${vpn_info_info:12:7}
+vpn_info=${vpn_info:12:7}
 vpn_info=$(echo "$vpn_info" | tr " " "-")
 if [ "$vpn_info" = "-active" ];
 then
