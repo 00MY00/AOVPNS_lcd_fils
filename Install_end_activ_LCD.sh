@@ -104,6 +104,10 @@ done
 # Installation resource
 
 sudo apt install python3-dev python3-rpi.gpio -y
+sudo apt-get install python3-smbus python3-dev i2c-tools
+
+
+
 if [ "$?" -eq "130" ];				# Corection ci erreur double procesuse 
 then
 	x=$(ps aux | grep -i dpkg)
@@ -132,6 +136,14 @@ sudo sed -i "s/Chang_my/$USER/" "info.sh"				# ajoute le nom de l'utilisateur
 sudo mv LCD_tach.service /etc/systemd/system/			# déplace dans le bon répertoire
 sudo chmod +rwx /etc/systemd/system/LCD_tach.service	# donne les drois
 sudo systemctl enable  LCD_tach.service					# acctive la tache
+# Verrifie bonne localisation des fichier
+[ ! -d "/home/$USER/lcd" ] && sudo mkdir /home/$USER/lcd
+[ ! -f "/home/$USER/lcd/info.sh" ] && sudo mv info.sh /home/$USER/lcd
+[ ! -f "/home/$USER/lcd/AOVPNS_lcd.py" ] && sudo mv AOVPNS_lcd.py /home/$USER/lcd
+[ ! -d "/home/$USER/lcd/configs" ] && sudo mv configs /home/$USER/lcd
+[ ! -d "/home/$USER/lcd/drivers" ] && sudo mv drivers /home/$USER/lcd
+sudo chmod 777 * /home/$USER/lcd
+sudo chmod 777 /home/$USER/lcd/VPN_server_info.py
 #---------------------
 
 sudo rm -f install.sh
